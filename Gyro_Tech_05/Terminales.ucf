@@ -1,0 +1,46 @@
+# Archivo de restricciones del usuario 
+
+# Reloj de 50 MHz 
+NET "clk"  		LOC = "C9"  | IOSTANDARD = LVCMOS33 ;
+
+# Boton para continuar el proceso 
+NET "inicia"   LOC = "V16" | IOSTANDARD = LVTTL 	| PULLDOWN;
+
+# Boton de inicialización
+NET "rst"   	LOC = "K17" | IOSTANDARD = LVTTL 	| PULLDOWN;
+NET "rst" CLOCK_DEDICATED_ROUTE = FALSE;
+
+NET "rstx"   	LOC = "H13" | IOSTANDARD = LVTTL 	| PULLDOWN;
+
+# Terminal de habilitación de la memoria StrataFlash (Intel) 
+NET "SF_CE0"	LOC = "D16" | IOSTANDARD = LVCMOS33 | DRIVE = 4 | SLEW = SLOW ;
+
+# Señales de control del LCD
+NET "LCD_E" 	LOC = "M18" | IOSTANDARD = LVCMOS33 | DRIVE = 4 | SLEW = SLOW ;
+NET "LCD_RS" 	LOC = "L18" | IOSTANDARD = LVCMOS33 | DRIVE = 4 | SLEW = SLOW ;
+NET "LCD_RW" 	LOC = "L17" | IOSTANDARD = LVCMOS33 | DRIVE = 4 | SLEW = SLOW ;
+
+# Interfaz de 4 bits del LCD
+NET "data<3>" 	LOC = "R15" | IOSTANDARD = LVCMOS33 | DRIVE = 4 | SLEW = SLOW ;
+NET "data<2>" 	LOC = "R16" | IOSTANDARD = LVCMOS33 | DRIVE = 4 | SLEW = SLOW ;
+NET "data<1>" 	LOC = "P17" | IOSTANDARD = LVCMOS33 | DRIVE = 4 | SLEW = SLOW ;
+NET "data<0>" 	LOC = "M15" | IOSTANDARD = LVCMOS33 | DRIVE = 4 | SLEW = SLOW ;
+
+# Terminal de salida PWM
+NET "pwm" LOC = "A4"|IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 12;
+
+# Terminales para la salida del sentido de giro (INA, INB)
+NET "giro(0)" LOC = "B4"|IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 12;
+NET "giro(1)" LOC = "D5"|IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 12;
+
+# Terminal para la Recepción de datos 
+NET "rx" LOC = "F7" | IOSTANDARD = LVTTL ;
+
+# Terminal para la Transmisión de datos # 
+NET "tx" LOC = "A6" | IOSTANDARD = LVTTL | DRIVE = 8 | SLEW = SLOW ;
+
+# Terminal de entrada del sensor IR
+NET "IR" LOC = "C5"|IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 6;
+NET "IR" CLOCK_DEDICATED_ROUTE = FALSE;
+
+NET "per_listo" LOC = "F12" | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8 ;
